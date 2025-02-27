@@ -14,45 +14,38 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard</title>
-    <style>
-        .dropdown {
-            position: relative;
-            display: inline-block;
-        }
-        .dropdown-content {
-            display: none;
-            position: absolute;
-            background-color: #f9f9f9;
-            min-width: 160px;
-            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-            z-index: 1;
-        }
-        .dropdown-content a {
-            color: black;
-            padding: 12px 16px;
-            text-decoration: none;
-            display: block;
-        }
-        .dropdown-content a:hover {background-color: #f1f1f1}
-        .dropdown:hover .dropdown-content {
-            display: block;
-        }
-        .dropdown:hover .dropbtn {
-            background-color: #3e8e41;
-        }
-    </style>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
-    <h1>Selamat datang, <?php echo htmlspecialchars($username); ?></h1>
-    <a href="logout.php">Logout</a>
-    <a href="../products/products.php">Products</a>
-
-    <div class="dropdown">
-        <button class="dropbtn">Account Settings</button>
-        <div class="dropdown-content">
-            <a href="change_address.php">Change Address</a>
-            <a href="order_status.php">Order Status</a>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">Toko Bunga</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="../products/products.php">Products</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <img src="path/to/avatar.jpg" class="rounded-circle" alt="">
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="logout.php">Logout</a>
+                        <a class="dropdown-item" href="change_address.php">Change Address</a>
+                        <a class="dropdown-item" href="order_status.php">Order Status</a>
+                    </div>
+                </li>
+            </ul>
         </div>
+    </nav>
+    <div class="container mt-5">
+        <h1 class="text-center">Selamat datang, <?php echo htmlspecialchars($username); ?></h1>
     </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
