@@ -2,7 +2,7 @@
     require '../../koneksi.php';
     session_start();
     if (!isset($_SESSION['login'])) {
-        header("location: login.php");
+        header("location: ../login.php");
         exit;
     }
 
@@ -41,42 +41,71 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Add Product</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
-    <form action="" method="post">
-        <h1>Add Product</h1>
-        <a href="main_products.php">List Produk</a>
-        <label for="name">Name</label>
-        <input type="text" name="name" id="name" required>
-        <label for="price">Price</label>
-        <input type="number hidden" name="price" id="price" required>
-        <label for="stock">Stock</label>
-        <input type="number hidden" name="stock" id="stock" required>
-        <label for="order_type">Order Type</label>
-        <select name="order_type" id="order_type" required>
-            <option value="Bunga Asli">Bunga Asli</option>
-            <option value="Bunga Kawat">Bunga Kawat</option>
-            <option value="Bunga Plastik">Bunga Plastik</option>
-        </select>
-        <label for="color">Color</label>
-        <select name="color" id="Color" required>
-            <option value="Biru Pastel">Biru Pastel</option>
-            <option value="Pink Pastel">Pink Pastel</option>
-            <option value="Ungu Pastel">Ungu Pastel</option>
-            <option value="Navy">Navy</option>
-            <option value="Hitam">Hitam</option>
-            <option value="Maroon">Maroon</option>
-            <option value="Putih">Putih</option>
-        </select>
-        <label for="size">Size</label>
-        <select name="size" id="Size" required>
-            <option value="Small">Small</option>
-            <option value="Medium">Medium</option>
-            <option value="Big">Big</option>
-        </select>
-        <button type="submit">Add Product</button>
-    </form>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="../index.php">Toko Bunga</a>
+    </nav>
+    <div class="container mt-5">
+        <h1 class="text-center mb-4">Add Product</h1>
+        <a href="main_products.php" class="btn btn-secondary mb-4">Back to Product List</a>
+        <form action="" method="post">
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" name="name" id="name" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="price">Price</label>
+                <input type="number" step="0.01" name="price" id="price" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="stock">Stock</label>
+                <input type="number" name="stock" id="stock" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="order_type">Order Type</label>
+                <select name="order_type" id="order_type" class="form-control" required>
+                    <option value="Bunga Asli">Bunga Asli</option>
+                    <option value="Bunga Kawat">Bunga Kawat</option>
+                    <option value="Bunga Plastik">Bunga Plastik</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="color">Color</label>
+                <select name="color" id="color" class="form-control" required>
+                    <option value="Biru Pastel">Biru Pastel</option>
+                    <option value="Pink Pastel">Pink Pastel</option>
+                    <option value="Ungu Pastel">Ungu Pastel</option>
+                    <option value="Navy">Navy</option>
+                    <option value="Hitam">Hitam</option>
+                    <option value="Maroon">Maroon</option>
+                    <option value="Putih">Putih</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="size">Size</label>
+                <select name="size" id="size" class="form-control" required>
+                    <option value="Small">Small</option>
+                    <option value="Medium">Medium</option>
+                    <option value="Big">Big</option>
+                </select>
+            </div>
+            <button type="submit" class="btn btn-primary">Add Product</button>
+        </form>
+    </div>
 
-
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
